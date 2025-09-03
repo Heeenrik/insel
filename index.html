@@ -10,42 +10,40 @@
     margin: 0; padding: 0; overflow: hidden; height: 100%; width: 100%;
     background-color: black;
   }
-  #gif-container {
-    height: 100vh;
+
+  #container {
+    position: relative;
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
+    height: 100vh;
   }
-  
-  #gif-container img {
+
+  #container img {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* macht das GIF formatfüllend */
+    object-fit: cover;
   }
-  
-  #text-container {
-    height: 20vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
+
+  /* falls du das obere GIF kleiner haben willst */
+  #text-container img {
+    width: 30%;  /* anpassen */
+    height: auto;
+    top: 20%;    /* anpassen */
+    left: 50%;
+    transform: translateX(-50%);
   }
 </style>
 
 </head>
-
 <body>
-  <div id="text-container">
-    <img src="IMG_9556.gif">
+  <div id="container">
+    <div id="gif-container">
+      <img src="gif.gif" alt="insel Animation" />
+    </div>
+    <div id="text-container">
+      <img src="IMG_9556.gif" alt="zweites GIF">
+    </div>
   </div>
-  
-  <div id="gif-container">
-    <img src="gif.gif" alt="insel Animation" />
-  </div>
-  
 </body>
-
 </html>
